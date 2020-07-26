@@ -9,7 +9,7 @@
                 <ul class="list-group">
                     @foreach($categories as $key => $c)
                     @if($c->products_count > 0)                
-                    <li class="list-group-item"><a href="{{ url('products') }}/{{ $c->id }}" style="color: #000;">{{ $c->name }}</a></li>
+                    <li class="list-group-item"><a href="{{ url('products') }}/{{ $c->id }}">{{ $c->name }}</a></li>
                     @else
                         <li class="list-group-item">{{ $c->name }}</li>
                     @endif

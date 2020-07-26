@@ -2,7 +2,7 @@
 @section('content')
 <div class="row text-center">
     <div class="col-md-10 mx-auto">
-         <h4>Top Rated Products</h4>
+         <h4>Products By Category</h4>
     </div>
 </div>
 <div class="row text-center">
