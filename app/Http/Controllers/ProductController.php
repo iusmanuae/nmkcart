@@ -36,8 +36,10 @@ class ProductController extends Controller
     					   ->where('id',$product_id)->first();
     	$related_products=Product::with('Product_images')
     							->where('status','1')
-    							->where('cat_id',$products->cat_id)
-    							->get()->random(8);
+                                ->where('cat_id',$products->cat_id)
+                                ->limit(8)
+                                ->get();
+                                // ->random();
     	return view('products/view',compact('x','categories','products','related_products','product_id'));
     }
     public function CartProducts($product_id)

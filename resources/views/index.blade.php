@@ -11,10 +11,10 @@
   <title>NMK Cart</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="{{ asset('public/theme/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('theme/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="{{ asset('public/theme/css/heroic-features.css') }}" rel="stylesheet">
+  <link href="{{ asset('theme/css/heroic-features.css') }}" rel="stylesheet">
 
 </head>
 
@@ -122,14 +122,14 @@
   <!-- Footer -->
   <footer class="py-5 bg-dark">
     <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
+      <p class="m-0 text-center text-white">Copyright &copy; <?= date('Y') ?></p>
     </div>
     <!-- /.container -->
   </footer>
 
   <!-- Bootstrap core JavaScript -->
-  <script src="{{ asset('public/theme/vendor/jquery/jquery.min.js') }}"></script>
-  <script src="{{ asset('public/theme/vendor/bootstrap/js/bootstrap.bundle.min.js') }} "></script>
+  <script src="{{ asset('/theme/vendor/jquery/jquery.min.js') }}"></script>
+  <script src="{{ asset('/theme/vendor/bootstrap/js/bootstrap.bundle.min.js') }} "></script>
 
 </body>
 </html>

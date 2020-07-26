@@ -63,7 +63,7 @@ input:checked + .slider:before {
 </style>
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-  <h1 class="h3 mb-0 text-gray-800">All Users</h1>
+  <h1 class="h3 mb-0 text-gray-800">All Categories</h1>
 </div>
 
 <!-- Content Row -->
@@ -99,7 +99,7 @@ input:checked + .slider:before {
 <script type="text/javascript" src="https://cdn.datatables.net/v/ju/jq-3.3.1/dt-1.10.21/datatables.min.js"></script>
 <script>
   $('#allUserTable').DataTable({
-          "ajax": "{{ url('admin/all-category') }}",
+          "ajax": "{{ url('admin/categories') }}",
   });
 
   function changeStatus(e,user_id) {

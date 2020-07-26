@@ -7,8 +7,10 @@
             <div class="card">
                 <div class="card-header">Categories</div>
                 <ul class="list-group">
-                    @foreach($categories as $key => $c)                       
-                    <li class="list-group-item"><a href="{{ url('all-products') }}/{{ $c->id }}" style="color: #000;">{{ $c->name }}</a></li>
+                    @foreach($categories as $key => $c)
+                    @if($c->products_count > 0)                
+                    <li class="list-group-item"><a href="{{ url('products') }}/{{ $c->id }}" style="color: #000;">{{ $c->name }}</a></li>
+                    @endif
                     @endforeach
                 </ul>
             </div>                
@@ -16,29 +18,29 @@
         <div class="col-lg-8">
             <div class="row">
                 <div class="col-12">
-                    <img class="img-fluid" src="{{ asset('public/images/main-banner.jpg') }}" alt="">
+                    <img class="img-fluid" src="{{ asset('/images/main-banner.jpg') }}" alt="">
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-4 col-xs-12">
-                    <img class="img-fluid" src="{{ asset('public/images/small-banner1.jpg') }}" alt="">
+                    <img class="img-fluid" src="{{ asset('/images/small-banner1.jpg') }}" alt="">
                 </div>
                 <div class="col-md-4 col-xs-12">
-                    <img class="img-fluid" src="{{ asset('public/images/small-banner2.jpg') }}" alt="">
+                    <img class="img-fluid" src="{{ asset('/images/small-banner2.jpg') }}" alt="">
                 </div>
                 <div class="col-md-4 col-xs-12">
-                    <img class="img-fluid" src="{{ asset('public/images/small-banner3.jpg') }}" alt="">
+                    <img class="img-fluid" src="{{ asset('/images/small-banner3.jpg') }}" alt="">
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-4 col-xs-12">
-                    <img class="img-fluid" src="{{ asset('public/images/small-banner1.jpg') }}" alt="">
+                    <img class="img-fluid" src="{{ asset('/images/small-banner1.jpg') }}" alt="">
                 </div>
                 <div class="col-md-4 col-xs-12">
-                    <img class="img-fluid" src="{{ asset('public/images/small-banner2.jpg') }}" alt="">
+                    <img class="img-fluid" src="{{ asset('/images/small-banner2.jpg') }}" alt="">
                 </div>
                 <div class="col-md-4 col-xs-12">
-                    <img class="img-fluid" src="{{ asset('public/images/small-banner3.jpg') }}" alt="">
+                    <img class="img-fluid" src="{{ asset('/images/small-banner3.jpg') }}" alt="">
                 </div>
             </div>
         </div>
@@ -57,7 +59,9 @@
     @foreach($products as $key => $p)
       <div class="col-lg-3 col-md-6 mb-4">
         <div class="card h-100">
-          <img class="card-img-top" src="{{ asset('public/images/layout-1/product') }}/{{ $p->product_images[0]->image }}" alt="">
+            <?php if(isset($p->product_images[0])) : ?>
+          <img class="card-img-top" src="{{ asset('/images/layout-1/product') }}/{{ $p->product_images[0]->image }}" alt="">
+          <?php endif ?>
           <div class="card-body">
             <h4 class="card-title">{{ $p->name }}</h4>
             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>

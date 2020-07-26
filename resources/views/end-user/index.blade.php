@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <div class="breadcrumb-contain">
+                <!-- <div class="breadcrumb-contain">
                     <div>
                         <h2>dashboard</h2>
                         <ul>
@@ -14,7 +14,7 @@
                             <li><a href="#">dashbord</a></li>
                         </ul>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

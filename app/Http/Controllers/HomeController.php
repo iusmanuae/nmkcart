@@ -21,7 +21,8 @@ class HomeController extends Controller
     public function index()
     {
         $x=0;
-        $categories=app('App\Http\Controllers\CategoryController')->AllCategories();
+        // $categories=app('App\Http\Controllers\CategoryController')->AllCategories();
+        $categories = Categorie::withCount('products')->get();
 
         $products=app('App\Http\Controllers\ProductController')->GetAllProducts();
         return view('index_1',compact('x','categories','products'));

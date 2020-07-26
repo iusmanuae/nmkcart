@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <div class="breadcrumb-contain">
+                <!-- <div class="breadcrumb-contain">
                     <div>
                         <h2>cart</h2>
                         <ul>
@@ -14,7 +14,7 @@
                             <li><a href="#">cart</a></li>
                         </ul>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
@@ -97,7 +97,7 @@
             })
             .done(function(resp) {
 
-               var data='<tr><td> <a href="#"><img src="{{ asset('public/images/layout-1/product') }}/'+resp.product_images[0].image+'" alt="cart" class=""></a></td><td><a href="#">'+resp.name+'</a><div class="mobile-cart-content row"><div class="col-xs-3"><div class="qty-box"><div class="input-group"></div></div></div><div class="col-xs-3"></div><div class="col-xs-3"><h2 class="td-color"><a href="#" class="icon"><i class="ti-close"></i></a></h2></div></div></td><td><h2>Rs '+resp.price+'</h2></td><td><div class="qty-box"><div class="input-group"> <input type="number" name="quantity[]" class="quantity_box form-control input-number" value="'+val.qty+'"><input class="product_id" type="hidden" name="product_id[]" value="'+val.p_id+'"></div></div></td><td><a href="#" class="icon"><i class="ti-close"></i></a></td><td><h2 class="td-color">Rs '+parseInt(val.qty)*parseInt(resp.price)+'</h2></td></tr>';
+               var data='<tr><td> <a href="#"><img style="max-width:100px" src="{{ asset('/images/layout-1/product') }}/'+resp.product_images[0].image+'" alt="cart" class=""></a></td><td><a href="#">'+resp.name+'</a><div class="mobile-cart-content row"><div class="col-xs-3"><div class="qty-box"><div class="input-group"></div></div></div><div class="col-xs-3"></div><div class="col-xs-3"><h2 class="td-color"><a href="#" class="icon"><i class="ti-close"></i></a></h2></div></div></td><td><h2>Rs '+resp.price+'</h2></td><td><div class="qty-box"><div class="input-group"> <input type="number" name="quantity[]" class="quantity_box form-control input-number" value="'+val.qty+'"><input class="product_id" type="hidden" name="product_id[]" value="'+val.p_id+'"></div></div></td><td><a href="#" class="icon"><i class="ti-close"></i></a></td><td><h2 class="td-color">Rs '+parseInt(val.qty)*parseInt(resp.price)+'</h2></td></tr>';
                 $('#cart_data_table').append(data);
                 subTotal+=parseInt(resp.price)*parseInt(val.qty);
                 $('#subTotal').html('Rs '+subTotal)

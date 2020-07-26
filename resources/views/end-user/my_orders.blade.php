@@ -13,7 +13,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <div class="breadcrumb-contain">
+                <!-- <div class="breadcrumb-contain">
                     <div>
                         <h2>My Orders</h2>
                         <ul>
@@ -22,7 +22,7 @@
                             <li><a href="#">orders</a></li>
                         </ul>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

@@ -104,7 +104,7 @@ input:checked + .slider:before {
 <script type="text/javascript" src="https://cdn.datatables.net/v/ju/jq-3.3.1/dt-1.10.21/datatables.min.js"></script>
 <script>
   $('#allUserTable').DataTable({
-          "ajax": "{{ url('admin/all-user') }}",
+          "ajax": "{{ url('admin/users') }}",
   });
 
   function changeStatus(e,user_id) {

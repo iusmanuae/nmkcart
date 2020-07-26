@@ -24,8 +24,20 @@ class AdminController extends Controller
     {
     	if (Auth::user()->role!='admin') {
     		return redirect('/');
-    	}
-    	return view('admin_portal/index');
+		}
+		$products = Product::all();
+		$totalProducts = $products->count();
+
+		$categories = Categorie::all();
+		$totalCategories = $categories->count();
+
+		$orders = Order::all();
+		$totalOrders = $orders->count();
+
+		$users = User::all();
+		$totalUsers = $users->count();
+
+    	return view('admin_portal/index', compact('totalProducts', 'totalCategories', 'totalOrders', 'totalUsers'));
     }
 
     public function AllUser(Request $request)
@@ -97,7 +109,7 @@ class AdminController extends Controller
 	    		}
 		    		$data=[
 		    				$p->id,
-		    				'<img style="width:40px" src="http://localhost/blog/public/images/layout-1/product/'.$p->Product_images[0]->image.'">',
+		    				isset($p->Product_images[0]) ? '<img style="width:40px" src="/images/layout-1/product/'.$p->Product_images[0]->image.'">' : '',
 		    				$p->name,
 		    				$p->price,
 		    				$p->Product_category ? $p->Product_category->name : '',
@@ -139,7 +151,15 @@ class AdminController extends Controller
     {
     	if (Auth::user()->role!='admin') {
     		return redirect('/');
-    	}
+		}
+
+		$this->validate($request, [
+			'p_name' => ['required', 'max:255'],
+			'p_price' => ['required'],
+			'p_desc' => ['required'],
+			'p_category' => ['required']
+		]);		
+
     	$product=Product::create([
     		'name' => $request->p_name,
     		'price' => $request->p_price,
@@ -170,7 +190,7 @@ class AdminController extends Controller
     			'image' => $file2,
     		]);
     	}
-
+		return redirect()->route('admin.products')->withStatus(__('Product successfully created.'));
     	
     }
 
@@ -191,7 +211,7 @@ class AdminController extends Controller
 	    		}
 		    		$data=[
 		    				$c->id,
-		    				'<img style="width:40px" src="http://localhost/blog/public/images/layout-1/nav-img/'.$c->image.'">',
+		    				'<img style="width:40px" src="/images/layout-1/nav-img/'.$c->image.'">',
 		    				$c->name,
 		    				'<label class="switch">
 							  <input onchange="changeStatus(this,'.$c->id.')" type="checkbox" '.$status.'>
@@ -281,7 +301,7 @@ class AdminController extends Controller
 	 			foreach ($val->order_details as $key => $val1){
 		    		$data=[
 		    				$key,
-		    				'<img style="width:60px" src="http://localhost/blog/public/images/layout-1/product/'.$val1->product_data->product_images[0]->image.'" alt="'.$val1->product_data->product_images[0]->image.'">',
+		    				'<img style="width:60px" src="/images/layout-1/product/'.$val1->product_data->product_images[0]->image.'" alt="'.$val1->product_data->product_images[0]->image.'">',
 		    				$val1->product_data->name,
 		    				'Rs '.$val1->price,
 		    				$val1->qty,

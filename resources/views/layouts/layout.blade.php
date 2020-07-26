@@ -11,10 +11,11 @@
   <title>NMK Cart</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="{{ asset('public/theme/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('theme/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('admin-layout/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
 
   <!-- Custom styles for this template -->
-  <link href="{{ asset('public/theme/css/heroic-features.css') }}" rel="stylesheet">
+  <link href="{{ asset('theme/css/heroic-features.css') }}" rel="stylesheet">
 
 </head>
 
@@ -46,6 +47,9 @@
                   <a class="nav-link" href="{{ url('/login') }}">Login</a>
                 </li>
             @endif
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url('cart') }}"><i class="fa fa-shopping-cart"></i><span id="cart-product-counter"></span></a>
+            </li>
           
         </ul>
       </div>
@@ -66,9 +70,33 @@
   </footer>
 
   <!-- Bootstrap core JavaScript -->
-  <script src="{{ asset('public/theme/vendor/jquery/jquery.min.js') }}"></script>
-  <script src="{{ asset('public/theme/vendor/bootstrap/js/bootstrap.bundle.min.js') }} "></script>
+  <script src="{{ asset('theme/vendor/jquery/jquery.min.js') }}"></script>
+  <script src="{{ asset('theme/vendor/bootstrap/js/bootstrap.min.js') }} "></script>
+  @yield('jquery')
 
+  <script>
+    jQuery(document).ready(function(){
+            var counter_cart = JSON.parse(getCookie('Eshooping_cart'));
+            $('#cart-product-counter').html(counter_cart.length)
+    });
+
+
+    function getCookie(cname) {
+        var name = cname + "=";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var ca = decodedCookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+    </script>
 </body>
 
 </html>
