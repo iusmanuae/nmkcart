@@ -43,7 +43,7 @@ class HomeController extends Controller
                 }
                     $data=[
                             $p->id,
-                            '<img style="width:40px" src="http://localhost/blog/public/images/layout-1/product/'.$p->Product_images[0]->image.'">',
+                            '<img style="width:40px" src="http://localhost/nmk/public/images/layout-1/product/'.$p->Product_images[0]->image.'">',
                             $p->name,
                             $p->price,
                             $p->Product_category ? $p->Product_category->name : '',
