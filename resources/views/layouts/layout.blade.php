@@ -48,7 +48,7 @@
                 </li>
             @endif
             <li class="nav-item">
-              <a class="nav-link" href="{{ url('cart') }}"><i class="fa fa-shopping-cart"></i><span id="cart-product-counter"></span></a>
+              <a class="nav-link" href="{{ url('cart') }}"><i class="fa fa-shopping-cart"></i><span id="cart-product-counter"></span> Cart</a>
             </li>
           
         </ul>
