@@ -28,33 +28,16 @@
                                         <h2>{{ $products->name }}</h2>
                                         <h3>AED {{ $products->price }}</h3>
                                         <div class="product-description border-product">
-                                            
-                                        
-                                            <h6 class="product-title">quantity</h6>
+                                            <h6 class="product-title">Quantity</h6>
                                             <div class="qty-box">
-                                                <div class="input-group"><span class="input-group-prepend"><button type="button" class="btn quantity-left-minus" data-type="minus" data-field=""><i class="ti-angle-left"></i></button> </span>
-                                                    <input type="number" name="quantity" class="form-control input-number" value="1"> <span class="input-group-prepend"><button type="button" class="btn quantity-right-plus" data-type="plus" data-field=""><i class="ti-angle-right"></i></button></span></div>
+                                                <input type="number" name="quantity" class="form-control input-number" value="1"></div>
                                             </div>
                                         </div>
-                                        <div class="product-buttons" onclick="addToCart()"><a href='javascript:;'>add to cart</a></div>
+                                        <div class="product-buttons" onclick="addToCart()"><a class="btn btn-outline-success" href='javascript:;'>add to cart</a></div>
                                         <div class="border-product">
-                                            <h6 class="product-title">product details</h6>
+                                            <h6 class="product-title">Description</h6>
                                             <p style="height: 100px;overflow-y: hidden;">{{ $products->desc }}</p>
-                                        </div>
-                                        <div class="border-product  pb-0">
-                                            <div class="product-icon">
-                                                <ul class="product-social ">
-                                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-rss"></i></a></li>
-                                                </ul>
-                                                <form class="d-inline-block">
-                                                    <button class="wishlist-btn"><i class="fa fa-heart"></i><span class="title-font">Add To WishList</span></button>
-                                                </form>
-                                            </div>
-                                        </div>
+                                        </div>                                        
                                     </div>
                                 </div><br>
                          
@@ -96,7 +79,7 @@
             <div class="custom-container">
                 <div class="row">
                     <div class="col-12 product-related">
-                        <h2>related products</h2>
+                        <h2>Related Products</h2>
                     </div>
                 </div>
 
