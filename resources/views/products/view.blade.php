@@ -14,7 +14,7 @@
                                     <?php $first = true;  ?>
                                     @foreach($products->product_images as $key => $p)
                                     <div class="carousel-item <?= $first ? 'active' : '' ?>">
-                                        <img class="img-fluid" src="{{ asset('/images/layout-1/product') }}/{{ $p->image }}" alt="First slide">
+                                        <img class="img-fluid" src="{{ asset('public/images/layout-1/product') }}/{{ $p->image }}" alt="First slide">
                                     </div>
                                     <?php $first = false; ?>
                                     @endforeach
@@ -114,10 +114,10 @@
                             <div class="product-box">
                                 <div class="product-imgbox">
                                     <div class="product-front">
-                                        <img src="{{ asset('/images/layout-1/product') }}/{{ $p->product_images[0]->image }}" class="img-fluid  " alt="product">
+                                        <img src="{{ asset('public/images/layout-1/product') }}/{{ $p->product_images[0]->image }}" class="img-fluid  " alt="product">
                                     </div>
                                     <div class="product-back">
-                                        <img src="{{ asset('/images/layout-1/product') }}/{{ $p->product_images[1]->image }}" class="img-fluid  " alt="product">
+                                        <img src="{{ asset('public/images/layout-1/product') }}/{{ $p->product_images[1]->image }}" class="img-fluid  " alt="product">
                                     </div>
                                     <div class="product-icon">
                                         <button onclick="openCart()" type="button">

@@ -10,6 +10,8 @@
                     @foreach($categories as $key => $c)
                     @if($c->products_count > 0)                
                     <li class="list-group-item"><a href="{{ url('products') }}/{{ $c->id }}" style="color: #000;">{{ $c->name }}</a></li>
+                    @else
+                        <li class="list-group-item">{{ $c->name }}</li>
                     @endif
                     @endforeach
                 </ul>
@@ -18,29 +20,29 @@
         <div class="col-lg-8">
             <div class="row">
                 <div class="col-12">
-                    <img class="img-fluid" src="{{ asset('/images/main-banner.jpg') }}" alt="">
+                    <img class="img-fluid" src="{{ asset('public/images/main-banner.jpg') }}" alt="">
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-4 col-xs-12">
-                    <img class="img-fluid" src="{{ asset('/images/small-banner1.jpg') }}" alt="">
+                    <img class="img-fluid" src="{{ asset('public/images/small-banner1.jpg') }}" alt="">
                 </div>
                 <div class="col-md-4 col-xs-12">
-                    <img class="img-fluid" src="{{ asset('/images/small-banner2.jpg') }}" alt="">
+                    <img class="img-fluid" src="{{ asset('public/images/small-banner2.jpg') }}" alt="">
                 </div>
                 <div class="col-md-4 col-xs-12">
-                    <img class="img-fluid" src="{{ asset('/images/small-banner3.jpg') }}" alt="">
+                    <img class="img-fluid" src="{{ asset('public/images/small-banner3.jpg') }}" alt="">
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-4 col-xs-12">
-                    <img class="img-fluid" src="{{ asset('/images/small-banner1.jpg') }}" alt="">
+                    <img class="img-fluid" src="{{ asset('public/images/small-banner1.jpg') }}" alt="">
                 </div>
                 <div class="col-md-4 col-xs-12">
-                    <img class="img-fluid" src="{{ asset('/images/small-banner2.jpg') }}" alt="">
+                    <img class="img-fluid" src="{{ asset('public/images/small-banner2.jpg') }}" alt="">
                 </div>
                 <div class="col-md-4 col-xs-12">
-                    <img class="img-fluid" src="{{ asset('/images/small-banner3.jpg') }}" alt="">
+                    <img class="img-fluid" src="{{ asset('public/images/small-banner3.jpg') }}" alt="">
                 </div>
             </div>
         </div>
@@ -60,7 +62,7 @@
       <div class="col-lg-3 col-md-6 mb-4">
         <div class="card h-100">
             <?php if(isset($p->product_images[0])) : ?>
-          <img class="card-img-top" src="{{ asset('/images/layout-1/product') }}/{{ $p->product_images[0]->image }}" alt="">
+          <img class="card-img-top" src="{{ asset('public/images/layout-1/product') }}/{{ $p->product_images[0]->image }}" alt="">
           <?php endif ?>
           <div class="card-body">
             <h4 class="card-title">{{ $p->name }}</h4>

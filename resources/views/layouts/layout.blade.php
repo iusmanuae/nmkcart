@@ -11,11 +11,11 @@
   <title>NMK Cart</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="{{ asset('theme/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('public/theme/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
   <link href="{{ asset('admin-layout/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
 
   <!-- Custom styles for this template -->
-  <link href="{{ asset('theme/css/heroic-features.css') }}" rel="stylesheet">
+  <link href="{{ asset('public/theme/css/heroic-features.css') }}" rel="stylesheet">
 
 </head>
 
@@ -70,8 +70,8 @@
   </footer>
 
   <!-- Bootstrap core JavaScript -->
-  <script src="{{ asset('theme/vendor/jquery/jquery.min.js') }}"></script>
-  <script src="{{ asset('theme/vendor/bootstrap/js/bootstrap.min.js') }} "></script>
+  <script src="{{ asset('public/theme/vendor/jquery/jquery.min.js') }}"></script>
+  <script src="{{ asset('public/theme/vendor/bootstrap/js/bootstrap.min.js') }} "></script>
   @yield('jquery')
 
   <script>

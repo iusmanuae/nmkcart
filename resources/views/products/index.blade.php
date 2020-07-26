@@ -13,7 +13,7 @@
       <div class="col-lg-3 col-md-6 mb-4">
         <div class="card h-100">
         <?php if(isset($p->product_images[0])) : ?>
-          <img class="card-img-top" src="{{ asset('/images/layout-1/product') }}/{{ $p->product_images[0]->image }}" alt="">
+          <img class="card-img-top" src="{{ asset('public/images/layout-1/product') }}/{{ $p->product_images[0]->image }}" alt="">
           <?php endif ?>
           <div class="card-body">
             <h4 class="card-title">{{ $p->name }}</h4>
